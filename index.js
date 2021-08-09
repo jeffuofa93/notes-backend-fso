@@ -1,6 +1,3 @@
-//MONGODB_URI='mongodb+srv://jeff:steelers1@phonebook-mongo.19wvo.mongodb.net/note-app?retryWrites=true&w=majority'
-// PORT=3001
-
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -72,7 +69,7 @@ app.get("/api/notes/:id", (request, response, next) => {
 
 app.delete("/api/notes/:id", (request, response, next) => {
   Note.findByIdAndRemove(request.params.id)
-    .then((result) => {
+    .then(() => {
       response.status(204).end();
     })
     .catch((error) => next(error));
