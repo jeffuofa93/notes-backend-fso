@@ -11,7 +11,7 @@
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
     "logs:prod": "heroku logs --tail",
     "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +24,10 @@
   },
   "devDependencies": {
     "eslint": "^7.32.0",
+    "jest": "^27.0.6",
     "nodemon": "^2.0.12"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
